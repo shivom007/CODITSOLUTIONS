@@ -42,15 +42,15 @@ const Note = ({ todo, handleDelete, handleUpdate }) => {
 
   return (
     <>
-    <div className=" grid p-4 border-2 items-center border-solid border-gray-500 rounded-xl max-h-28 h-20">
+    <div className=" grid md:p-4 p-2 border-2 items-center border-solid border-gray-500 rounded-xl max-h-28 md:h-20 h-16">
       <div className='flex justify-between'>
 
-      <span className={`text-2xl font-bold text-blue-600 font-serif`}>{title}</span>
+      <span className={`md:text-3xl text-2xl font-bold text-blue-600 font-serif`}>{title}</span>
       <div className="flex gap-x-4 justify-center items-center">
-        <i className={`fas fa-check-circle fa-2x ${done? "text-[#05d854]" : "text-gray-500"} ` } onClick={handleCheck}></i>
+        <i className={`fas fa-check-circle text-xl md:text-3xl ${done? "text-[#05d854]" : "text-gray-500"} ` } onClick={handleCheck}></i>
         
       <Dialog>
-  <DialogTrigger><i className="fas fa-edit fa-2x text-blue-500"  ></i></DialogTrigger>
+  <DialogTrigger><i className="fas fa-edit text-xl md:text-3xl text-blue-500"  ></i></DialogTrigger>
   <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Edit Todo</DialogTitle>
@@ -69,7 +69,7 @@ const Note = ({ todo, handleDelete, handleUpdate }) => {
       </DialogContent>
 </Dialog>
 
-        <i className="fas fa-trash-alt fa-2x text-red-600" onClick={onDelete} title="Delete"></i>
+        <i className="fas fa-trash-alt text-xl md:text-3xl text-red-600" onClick={onDelete} title="Delete"></i>
       </div>
       </div>
     </div>

@@ -172,24 +172,24 @@ function Home() {
         backgroundImage: `url('https://images.unsplash.com/photo-1476108621677-3c620901b5e7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
       }}
     >
-      <h1 className="text-8xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-blue-500">
+      <h1 className="md:text-8xl text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-blue-500">
         Your Todos
       </h1>
-      <div className="flex w-full max-w-[30rem] h-20 items-center space-x-2">
+      <div className="flex md:w-full w-[20rem] max-w-[30rem] h-20 items-center space-x-2">
         <Input
           type="text"
-          className="border border-gray-500 h-12  focus:border-blue-500"
+          className="border border-gray-500 h-11  focus:border-blue-500"
           onChange={(e) => setNewTodo(e.target.value)}
           placeholder="Add Todo"
         />
-        <Button type="submit" className="h-12" onClick={handleAddTodo}>
+        <Button type="submit" className="h-11" onClick={handleAddTodo}>
           Add
         </Button>
-        <Button onClick={handleLogout} className="h-12">
+        <Button onClick={handleLogout} className="h-11">
           Logout
         </Button>
       </div>
-      <div className="flex flex-col justify-center pt-5 gap-6  w-[30rem] ">
+      <div className="flex flex-col justify-center pt-5 gap-6 w-[20rem] md:w-[30rem] ">
         {todos &&
           todos.map((todo) => (
             <Note

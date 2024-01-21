@@ -1,10 +1,8 @@
 /* eslint-disable react/prop-types */
-
 import { useState, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
-
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -14,33 +12,19 @@ import { Button } from "../ui/button";
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-// eslint-disable-next-line react/prop-types
+
 const Note = ({ todo, handleDelete, handleUpdate }) => {
   
   const [done, setDone] = useState(false);
   const [title,setTitle] = useState(todo.title)
   const handleCheck = () => {
-    
     setDone(!done);
-   
-      // Perform some action when the checkbox is checked
-      // handleDelete(todo._id);
-    
-      // Perform some action when the checkbox is unchecked
-      
-   
-  };
+   };
   useEffect(() => {
     if (done) {
-      // Set a timeout to delay further actions for 3 seconds (3000 milliseconds)
       const timeoutId = setTimeout(() => {
-        // Perform some action when the checkbox is checked
         handleDelete(todo._id);
-
-        // Perform some action when the checkbox is unchecked
       }, 3000);
-
-      // Clear the timeout when the component unmounts or when done changes
       return () => clearTimeout(timeoutId);
     }
   }, [done]);
@@ -52,7 +36,6 @@ const Note = ({ todo, handleDelete, handleUpdate }) => {
   }
 
   const onUpdate = () => {
-    // Handle update action here, e.g., show a modal for editing
     handleUpdate(todo._id, title, todo.content)
   };
 

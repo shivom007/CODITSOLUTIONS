@@ -1,22 +1,17 @@
-// import React from 'react'
 import { ArrowRight } from "lucide-react";
 import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { ReloadIcon } from "@radix-ui/react-icons";
 
-// import { Button } from "@/components/ui/button";
-// eslint-disable-next-line react/prop-types
 export function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
-  // 5 minutes in milliseconds
   
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  // Event handler for form input changes
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData({
@@ -26,14 +21,14 @@ export function Login() {
   };
     
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.password) {
       alert("all field required");
       return;
     }
      setLoading(true)
-    fetch("https://noteapi1-5efk703l.b4a.run/api/auth/login", {
+    await fetch("https://noteapi1-5efk703l.b4a.run/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,11 +37,9 @@ export function Login() {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Handle the server response
         sessionStorage.setItem('token', data.token);
         setLoading(false)
         navigate("/")
-        // alert(sessionStorage.getItem('token'))
          toast(data.message, {
           description: new Date().toDateString(),
           action: {
@@ -54,13 +47,8 @@ export function Login() {
             onClick: () => console.log("Undo"),
           },
         });
-        
-        // alert("navigate")
-
-        
       })
       .catch((error) => {
-        // Handle error
         console.error("Error:", error);
       });
   };

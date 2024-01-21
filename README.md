@@ -23,7 +23,7 @@
 ````bash 
 git clone https://github.com/shivom007/CODTECHITSOLUTIONS.git
 ````
-- cd /tofilepath
+- cd "/toDesiredFilePath"
 - npm install
-- npm start / run dev
+- npm start or npm run dev
 - Open localhost with desired port to view it in your browser.

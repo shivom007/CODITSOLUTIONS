@@ -1,16 +1,9 @@
-/* eslint-disable react/prop-types */
-// import React from 'react'
 import { toast } from "sonner";
 import Note from "../note/Note";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-// import { url } from "inspector";
-// import { Label } from "@radix-ui/react-label";
-// import AddNote from "../note/AddNote";
-// import { error } from "console";
-// eslint-disable-next-line react/prop-types
 function Home() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
@@ -24,11 +17,8 @@ function Home() {
   };
 
   const handleDelete = (id) => {
-    // Remove the todo from the todos list
     const updatedTodos = todos.filter((t) => t._id !== id);
     setTodos(updatedTodos);
-
-    // Perform API call to delete the note on the server
     fetch(`https://noteapi1-5efk703l.b4a.run/api/notes/${id}`, {
       method: "DELETE",
       headers: {
@@ -54,11 +44,9 @@ function Home() {
       })
       .catch((error) => {
         console.error("Error deleting note:", error);
-        // You may want to handle the error, e.g., show an error message
       });
   };
   const handleAddTodo = () => {
-    // Perform API call to add the new todo on the server
     fetch("https://noteapi1-5efk703l.b4a.run/api/notes", {
       method: "POST",
       headers: {
@@ -66,8 +54,8 @@ function Home() {
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
-        title: newTodo, // Assuming the todo has a title property
-        content: "undefined", // You can adjust this based on your todo structure
+        title: newTodo, 
+        content: "undefined", 
       }),
     })
       .then((response) => {

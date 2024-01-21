@@ -1,4 +1,3 @@
-// import React from 'react'
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -11,7 +10,6 @@ export default function Signup() {
   });
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  // Event handler for form input changes
   const handleInputChange = (e) => {
     const {id, value} = e.target;
     setFormData({
@@ -36,7 +34,6 @@ export default function Signup() {
     })
       .then(response => response.json())
       .then(data => {
-        // Handle the server response
         toast(data.message, {
             description: new Date().toDateString(),
             action: {
@@ -48,7 +45,6 @@ export default function Signup() {
         console.log('Server response:', data);
       })
       .catch(error => {
-        // Handle error
         console.error('Error:', error);
       });
   };

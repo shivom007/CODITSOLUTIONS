@@ -16,7 +16,7 @@
 3. Explore how I bring creativity and problem-solving together.
 
 
-## WEATHER APP (Task 3)
+## WEATHER APP (Task 3) ✨
 
 1. This application provides real-time weather information for locations around the world.
 2. With a clean and intuitive interface, you can easily check the current weather conditions, forecast, and more.

@@ -21,10 +21,10 @@ const Search = ({ setCurrentWeather, setLoading, setForecast }) => {
     if (city !== "") {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=5691b3ccb007de1cd83239adf98c432f&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=${import.meta.env.VITE_OPEN_WEATHER_KEY}&units=metric`
         );
         const result = await fetch(
-          `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&appid=5691b3ccb007de1cd83239adf98c432f&units=metric`
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&appid=${import.meta.env.VITE_OPEN_WEATHER_KEY}&units=metric`
         );
         const data = await response.json();
         const data1 = await result.json();
@@ -52,7 +52,7 @@ const Search = ({ setCurrentWeather, setLoading, setForecast }) => {
       if (value !== "") {
         try {
           const response = await fetch(
-            `http://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=5691b3ccb007de1cd83239adf98c432f`
+            `http://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${import.meta.env.VITE_OPEN_WEATHER_KEY}`
           );
           const data = await response.json();
           setSuggestion(data);

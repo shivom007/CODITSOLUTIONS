@@ -73,17 +73,17 @@ const Search = ({ setCurrentWeather, setLoading, setForecast }) => {
         <Input
           type="text"
           placeholder="Enter Your City"
-          className="border-gray-400 rounded-full text-xl h-12 pl-4 pr-12"
+          className="border-black rounded-full text-[#ffffff] text-xl h-12 pl-4 pr-12"
           onChange={(e) => {
             debouncedChange.current(e.target.value);
           }}
         />
         <i
-          className="absolute text-[#3080c8] right-3 cursor-pointer md:text-[3rem] text-[2rem] bx bx-search-alt-2 bx-flip-horizontal"
+          className="absolute text-[#92ffff] right-3 cursor-pointer md:text-[2.5rem] text-[2rem] bx bx-search-alt-2 bx-flip-horizontal"
           onClick={handleSubmit}
         ></i>
       </div>
-      <div className="h-auto absolute mt-14 w-full max-w-[45rem] bg-gray-300 rounded-xl  overflow-hidden">
+      <div className="h-auto absolute mt-14 w-full max-w-[45rem] text-[#ffffff] bg-[#004141] rounded-xl  overflow-hidden">
         {suggestion &&
           suggestion.map((s, idx) => (
             <div

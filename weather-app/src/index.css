@@ -6,4 +6,6 @@
 body{
   font-family: 'Poppins', sans-serif;
   background: url(./assets/bg.svg) center 120% / auto no-repeat, linear-gradient(rgb(249, 255, 255) 0%, rgb(56, 200, 230) 100%);
+  background-image: url(./assets/bg.svg), linear-gradient(rgb(0, 65, 65) 0%, rgb(0, 243, 255) 100%);
+  background-color: initial;
 }
